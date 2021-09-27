@@ -689,7 +689,7 @@ header{
 	line-height: 19px;
 	display: flex;
 	align-items: center;
-	text-indent: 20px;
+	padding: 0 20px;
 	color: rgba(51, 51, 51, 0.5);
 	border: 1px solid transparent;
 }
@@ -860,6 +860,10 @@ header{
     justify-content: space-between;
 }
 
+.menu-list:not(:last-child){
+	padding-right:10px ;
+}
+
 .menu-item{
 	display: flex;
 	margin-bottom: 30px;
@@ -874,18 +878,22 @@ header{
 	margin-right:13px ;
 }
 
+.menu-item--price{
+		white-space: nowrap;
+}
 
-.menu-list:nth-child(1){
+
+.anim-show:nth-child(1){
 	transform: translate(-140%, 0px);
 	opacity: 0;
 	transition: all 1s ease 0.2s;
 }
-.menu-list:nth-child(2){
+.anim-show:nth-child(2){
 
 	opacity: 0;
 	transition: all 1s ease 0.4s;
 }
-.menu-list:nth-child(3){
+.anim-show:nth-child(3){
 	transform: translate(140%, 0px);
 	opacity: 0;
 	transition: all 1s ease 0.2s;
@@ -1059,27 +1067,38 @@ footer{
 
 
 @media (max-width: 1340px){
-	.content-flex{
-		width: ;
+	.content{
+		justify-content: space-around;
 	
 	}
 	.content img{
 		width: 525px;
-		height: 400px;
+		height: 350px;
 
+	}
+
+	.content-left, .content-right{
+		padding: 0;
 	}
 	.right-frame,.left-frame{
 		width: 200px;
 		height: 200px
 	}
-	.content-right img{
-		padding-right: 100px;
-	}
-	.content-left img{
-		padding-left: 100px;
-	}
+	
 	.text{
-		padding-top: 50px;
+		width: 450px;
+		padding-top: 20px;
+		
+	}
+	.table .text {
+		padding-top: 4px;
+	}
+	.book-form_input{
+		width: 220px;
+	}
+
+	h4{
+		font-size: 16px;
 	}
 
 }
@@ -1091,6 +1110,13 @@ footer{
 		width:  90px;
 		height: 90px;
 		margin: 10px;
+	}
+	.menu-content{
+		justify-content: space-around;
+	}
+	.menu-list:nth-child(3){
+		display: none;
+
 	}
 
 	.hero-content{
@@ -1137,8 +1163,9 @@ footer{
 	.content-left{
 		max-width: 600px;
 		margin: 0 auto;
-
-
+	}
+	h4{
+		font-size: 15px;
 	}
 	.content-right{
 		max-width: 600px;
@@ -1160,11 +1187,9 @@ footer{
 		flex-direction: column;
 	}
 	.book-form_input{
-		width: 400px
+		width: 450px;
 	}
-	h4{
-		font-size: 16px;
-	}
+	
 	.events .content {
 		flex-direction: row;
 	}
@@ -1305,10 +1330,13 @@ footer{
 	.menu-content--active{
 		flex-direction: column;
 		overflow: auto;
-		height: 500px;	}
+		height: 500px;
+	}
 	.menu-item{
 		justify-content: center;
 	}
+
+
 	.events .content{
 		flex-direction: column;
 	}
@@ -1387,7 +1415,7 @@ footer{
 
 }
 
-@media (max-width: 500px){
+@media (max-width: 510px){
 	.book-form_input{
 		max-width: 300px;
 	}
@@ -1409,9 +1437,17 @@ footer{
 	.content-left, .content-right{
 		max-width: 300px;
 	}
+	.hair p{
+		flex-wrap: wrap;
+		justify-content: center;
+		flex: 0 1 280px;
 
-	
-	
+	}
+	.text{
+		width: 300px;
+
+	}
+
 }
 
 
